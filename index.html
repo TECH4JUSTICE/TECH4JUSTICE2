@@ -5,225 +5,201 @@
 
 <style>
 
-body{
-margin:0;
-font-family:system-ui, sans-serif;
-background:linear-gradient(135deg,#f8fafc,#e2e8f0);
-color:#1e293b;
-overflow-x:hidden;
+/* --- Body & Font --- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+  color: #1f2937;
+  overflow-x: hidden;
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 60px;
-position:sticky;
-top:0;
-background:rgba(255,255,255,0.6);
-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(0,0,0,0.05);
+/* --- Navigation --- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 100;
 }
 
-nav a{
-text-decoration:none;
-margin-left:25px;
-font-weight:600;
-color:#0f172a;
-font-size:17px;
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 17px;
+  transition: 0.3s;
 }
 
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
+nav a:hover {
+  color: #0ea5e9;
 }
 
-.glass{
-background:rgba(255,255,255,0.5);
-backdrop-filter:blur(18px);
-border-radius:20px;
-padding:60px;
-box-shadow:0 20px 40px rgba(0,0,0,0.1);
-max-width:900px;
+/* --- Hero Section --- */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
 }
 
-.hero h1{
-font-size:64px;
-letter-spacing:4px;
-margin:0;
+.glass-hero {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 60px;
+  max-width: 900px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-.hero p{
-margin-top:25px;
-font-size:18px;
-opacity:0.8;
+.hero h1 {
+  font-size: 64px;
+  letter-spacing: 3px;
+  margin: 0;
 }
 
-.button{
-margin-top:30px;
-padding:14px 28px;
-border-radius:10px;
-background:#0ea5e9;
-color:white;
-text-decoration:none;
-font-weight:600;
-display:inline-block;
+.hero p {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0.85;
 }
 
-.section{
-padding:120px 20px;
-display:flex;
-justify-content:center;
+.button {
+  margin-top: 30px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #0ea5e9;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.3s;
 }
 
-.section-content{
-max-width:900px;
+.button:hover {
+  background: #0284c7;
 }
 
-.card-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
+/* --- Section Style --- */
+.section {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.card{
-background:rgba(255,255,255,0.6);
-backdrop-filter:blur(15px);
-border-radius:18px;
-padding:40px;
-transition:0.3s;
+.section-content {
+  max-width: 900px;
 }
 
-.card:hover{
-transform:translateY(-6px);
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
-.big-link{
-font-size:20px;
-font-weight:700;
-display:block;
-margin-top:15px;
-text-decoration:none;
-color:#0f172a;
+.card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 40px;
+  transition: 0.3s;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
 }
 
-footer{
-text-align:center;
-padding:50px;
-opacity:0.6;
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.big-link {
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #0f172a;
+}
+
+.big-link:hover {
+  color: #0ea5e9;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 50px;
+  opacity: 0.7;
 }
 
 </style>
 
 <script>
-
 function scrollToAbout(){
-document.getElementById("about").scrollIntoView({behavior:"smooth"});
+  document.getElementById("about").scrollIntoView({behavior:"smooth"});
 }
-
 </script>
 
 </head>
-
 <body>
 
 <nav>
-
-<div><b>TECH4JUSTICE</b></div>
-
-<div>
-<a href="#about">About</a>
-<a href="complaints.html">Complaints</a>
-<a href="chatbot-race.html">Racial Bot</a>
-<a href="chatbot-disability.html">Disability Bot</a>
-<a href="chatbot-sex.html">Sex Bot</a>
-</div>
-
+  <div><b>TECH4JUSTICE</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="complaints.html">Complaints</a>
+    <a href="chatbot-race.html">Racial Bot</a>
+    <a href="chatbot-disability.html">Disability Bot</a>
+    <a href="chatbot-sex.html">Sex Bot</a>
+  </div>
 </nav>
 
 <section class="hero">
-
-<div class="glass">
-
-<h1>TECH4JUSTICE CLINIC</h1>
-
-<p>
-
-[ Students will insert information about the clinic here.  
-Explain the purpose of the clinic, its legal mission, and how technology tools help people understand discrimination law. ]
-
-</p>
-
-<a class="button" onclick="scrollToAbout()">Learn More</a>
-
-</div>
-
+  <div class="glass-hero">
+    <h1>TECH4JUSTICE CLINIC</h1>
+    <p>[Students insert information about the clinic here]</p>
+    <a class="button" onclick="scrollToAbout()">Learn More</a>
+  </div>
 </section>
 
 <section class="section" id="about">
+  <div class="section-content">
+    <div class="glass-hero">
+      <h2>About the Clinic</h2>
+      <p>[Students add detailed info about the Tech4Justice Clinic, its work, and goals]</p>
+      <a class="big-link" href="about.html">Read full About page →</a>
+    </div>
 
-<div class="section-content">
-
-<div class="glass">
-
-<h2>About the Clinic</h2>
-
-<p>
-Students will add detailed information here about the Tech4Justice Clinic,
-its work, and its goals.
-</p>
-
-<p>
-They may describe the collaboration between law students, technology,
-and community legal education.
-</p>
-
-<a class="big-link" href="about.html">Read the full About page →</a>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-
-<h3>Racial Discrimination Bot</h3>
-<p>Information about this legal assistant.</p>
-<a class="big-link" href="chatbot-race.html">Open Tool →</a>
-
-</div>
-
-<div class="card">
-
-<h3>Disability Discrimination Bot</h3>
-<p>Information about this legal assistant.</p>
-<a class="big-link" href="chatbot-disability.html">Open Tool →</a>
-
-</div>
-
-<div class="card">
-
-<h3>Sex Discrimination Bot</h3>
-<p>Information about this legal assistant.</p>
-<a class="big-link" href="chatbot-sex.html">Open Tool →</a>
-
-</div>
-
-</div>
-
-</div>
-
+    <div class="card-grid">
+      <div class="card">
+        <h3>Racial Discrimination Bot</h3>
+        <p>[Bot info goes here]</p>
+        <a class="big-link" href="chatbot-race.html">Open Tool →</a>
+      </div>
+      <div class="card">
+        <h3>Disability Discrimination Bot</h3>
+        <p>[Bot info goes here]</p>
+        <a class="big-link" href="chatbot-disability.html">Open Tool →</a>
+      </div>
+      <div class="card">
+        <h3>Sex Discrimination Bot</h3>
+        <p>[Bot info goes here]</p>
+        <a class="big-link" href="chatbot-sex.html">Open Tool →</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
-
 TECH4JUSTICE Legal Technology Clinic
-
 </footer>
 
 </body>
